@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC VAULT | AI Account Valuation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#0f1930",
+                        "background": "#060e20",
+                        "outline": "#6d758c",
+                        "tertiary-dim": "#95e400",
+                        "surface-container-highest": "#192540",
+                        "on-secondary-fixed-variant": "#006266",
+                        "error-container": "#a70138",
+                        "primary-container": "#c683ff",
+                        "surface-container-low": "#091328",
+                        "on-tertiary-fixed": "#294300",
+                        "outline-variant": "#40485d",
+                        "on-tertiary-fixed-variant": "#3d6200",
+                        "tertiary-fixed": "#a2f31f",
+                        "inverse-primary": "#8d00e6",
+                        "on-primary-fixed-variant": "#450074",
+                        "on-error": "#490013",
+                        "inverse-surface": "#faf8ff",
+                        "tertiary-container": "#a2f31f",
+                        "secondary-dim": "#00e5ee",
+                        "primary-fixed": "#c683ff",
+                        "surface-container-high": "#141f38",
+                        "inverse-on-surface": "#4d556b",
+                        "on-secondary-fixed": "#004346",
+                        "on-background": "#dee5ff",
+                        "surface-dim": "#060e20",
+                        "secondary": "#00f4fe",
+                        "surface": "#060e20",
+                        "surface-bright": "#1f2b49",
+                        "on-secondary-container": "#dffdff",
+                        "on-primary-container": "#37005f",
+                        "error": "#ff6e84",
+                        "on-primary": "#480079",
+                        "on-error-container": "#ffb2b9",
+                        "surface-container-lowest": "#000000",
+                        "secondary-container": "#00696e",
+                        "on-surface-variant": "#a3aac4",
+                        "surface-variant": "#192540",
+                        "tertiary": "#bcff5f",
+                        "tertiary-fixed-dim": "#95e400",
+                        "secondary-fixed-dim": "#00e5ee",
+                        "error-dim": "#d73357",
+                        "on-secondary": "#00575b",
+                        "on-tertiary-container": "#365700",
+                        "on-tertiary": "#3d6100",
+                        "on-surface": "#dee5ff",
+                        "on-primary-fixed": "#000000",
+                        "primary-dim": "#a533ff",
+                        "secondary-fixed": "#00f4fe",
+                        "surface-tint": "#cf96ff",
+                        "primary": "#cf96ff",
+                        "primary-fixed-dim": "#bc6fff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(31, 43, 73, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #cf96ff 0%, #a533ff 100%);
+        }
+        .kinetic-shadow {
+            box-shadow: 0 0 40px rgba(207, 150, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_0_40px_rgba(207,150,255,0.08)]">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] uppercase font-headline">
+                KINETIC VAULT
+            </div>
+<div class="hidden md:flex items-center gap-8 font-headline font-bold tracking-tight">
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Buy</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Sell</a>
+<a class="text-[#cf96ff] border-b-2 border-[#cf96ff] pb-1" href="#">Worth</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Dashboard</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-lowest px-4 py-2 rounded-xl border border-outline-variant/15">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-48" placeholder="Search accounts..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:bg-[#141f38] p-2 rounded-full transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-[#141f38] p-2 rounded-full transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+</div>
+<button class="gradient-primary text-on-primary font-headline font-bold px-6 py-2.5 rounded-md active:scale-95 transition-all duration-200">
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-16 relative">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight mb-4 max-w-3xl">
+                AI ACCOUNT <span class="text-primary">VALUATION</span> ENGINE
+            </h1>
+<p class="text-on-surface-variant text-lg max-w-xl">
+                Precision metrics meet neural analysis. Get instant, market-accurate worth for your gaming legacy across 50+ titles.
+            </p>
+</header>
+<!-- Valuation Interface Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Step 1: Input Form (Bento Style) -->
+<section class="lg:col-span-7 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary shadow-lg">
+<div class="flex items-center gap-3 mb-8">
+<span class="bg-secondary/20 text-secondary w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
+<h2 class="font-headline text-2xl font-bold">Select Battlefield</h2>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<button class="flex flex-col items-center p-6 bg-surface-container-highest rounded-xl border border-secondary/30 ring-2 ring-secondary/50 transition-all hover:bg-surface-bright">
+<span class="material-symbols-outlined text-4xl text-secondary mb-3">sports_esports</span>
+<span class="font-headline font-bold">VALORANT</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-surface-container-high rounded-xl border border-outline-variant/15 transition-all hover:bg-surface-bright grayscale hover:grayscale-0">
+<span class="material-symbols-outlined text-4xl mb-3">swords</span>
+<span class="font-headline font-bold">LEAGUE</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-surface-container-high rounded-xl border border-outline-variant/15 transition-all hover:bg-surface-bright grayscale hover:grayscale-0">
+<span class="material-symbols-outlined text-4xl mb-3">shield</span>
+<span class="font-headline font-bold">OVERWATCH</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-primary shadow-lg">
+<div class="flex items-center gap-3 mb-8">
+<span class="bg-primary/20 text-primary w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span>
+<h2 class="font-headline text-2xl font-bold">Technical Metrics</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-headline font-bold tracking-widest uppercase text-on-surface-variant">Global Rank</label>
+<div class="bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/15">
+<select class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-headline font-bold p-3">
+<option>Radiant / Challenger</option>
+<option>Immortal / Grandmaster</option>
+<option>Diamond</option>
+<option>Platinum</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-headline font-bold tracking-widest uppercase text-on-surface-variant">K/D Ratio</label>
+<div class="bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/15">
+<input class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-headline font-bold p-3" type="text" value="1.45"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-headline font-bold tracking-widest uppercase text-on-surface-variant">Win Rate %</label>
+<div class="bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/15">
+<input class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-headline font-bold p-3" type="text" value="58.2"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-headline font-bold tracking-widest uppercase text-on-surface-variant">Account Level</label>
+<div class="bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/15">
+<input class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-headline font-bold p-3" type="number" value="240"/>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-tertiary shadow-lg">
+<div class="flex items-center gap-3 mb-8">
+<span class="bg-tertiary/20 text-tertiary w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span>
+<h2 class="font-headline text-2xl font-bold">Rare Gear Registry</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-highest rounded-xl border-r-4 border-tertiary">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary-container/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">diamond</span>
+</div>
+<div>
+<div class="font-headline font-bold">Champions 2021 Vandal</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-tighter">Event Exclusive</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error">close</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-highest rounded-xl border-r-4 border-primary">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-container/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">swords</span>
+</div>
+<div>
+<div class="font-headline font-bold">Arcane Sheriff</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-tighter">Limited Collection</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error">close</span>
+</div>
+<button class="w-full py-4 border-2 border-dashed border-outline-variant/30 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2 font-bold">
+<span class="material-symbols-outlined">add_circle</span>
+                            Add More Items
+                        </button>
+</div>
+</div>
+<button class="w-full gradient-primary py-6 rounded-xl font-headline text-2xl font-black tracking-tighter text-on-primary kinetic-shadow hover:scale-[1.02] active:scale-95 transition-all">
+                    VALUE MY ACCOUNT
+                </button>
+</section>
+<!-- Step 2: Value Breakdown (Sidebar/Results) -->
+<aside class="lg:col-span-5 space-y-6">
+<!-- Value Card -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden shadow-2xl relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">Live Valuation</span>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-on-surface-variant uppercase tracking-[0.2em] text-sm mb-2">Estimated Market Worth</h3>
+<div class="flex items-baseline gap-3">
+<span class="font-headline text-6xl font-bold text-secondary">$1,248</span>
+<span class="text-tertiary font-bold text-lg">+12.4%</span>
+</div>
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<div class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-tight">Rarity Score</div>
+<div class="text-2xl font-headline font-bold">88<span class="text-sm text-outline">/100</span></div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<div class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-tight">Liquidity Index</div>
+<div class="text-2xl font-headline font-bold">High</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-8">
+<h4 class="font-headline font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-weight="fill">psychology</span>
+                            AI INSIGHTS
+                        </h4>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="w-1 bg-primary rounded-full"></div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+<span class="text-on-surface font-bold">Rare Item Alert:</span> Your "Champions 2021" set has increased by 15% in demand over the last 30 days due to market scarcity.
+                                </p>
+</div>
+<div class="flex gap-4">
+<div class="w-1 bg-secondary rounded-full"></div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+<span class="text-on-surface font-bold">Rank Premium:</span> Being in the top 0.5% of players adds an estimated <span class="text-secondary">$140</span> performance premium to your base valuation.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Trend Graph (Mock) -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<h3 class="font-headline font-bold mb-6">Price Trend (6 Months)</h3>
+<div class="h-40 flex items-end justify-between gap-2">
+<div class="w-full bg-outline-variant/20 rounded-t-sm h-[30%]"></div>
+<div class="w-full bg-outline-variant/20 rounded-t-sm h-[45%]"></div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-primary/60 rounded-t-sm h-[55%]"></div>
+<div class="w-full bg-primary/80 rounded-t-sm h-[85%]"></div>
+<div class="w-full bg-secondary rounded-t-sm h-[100%]"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-on-surface-variant uppercase">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+</div>
+</div>
+<!-- Featured Market Listing -->
+<div class="glass-panel p-6 rounded-xl border border-primary/20 relative overflow-hidden">
+<img alt="Cyberpunk gaming setup" class="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-overlay" data-alt="high-tech gaming rig with neon purple and cyan lighting in a dark room cinematic wide shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhgBxW0gI1auV7im4Hw7DHoJFbV0mRJ9MXX3S1UxcdnennY4-ACl5bPR1q-zPfn3hzsHxDiNcM0I_viT-_4QuduIuNBUIHorO7YDbKGfoQ0MewxWvcd2LVWHu_eissA1Ia_nrFa8J0B5AHCl8kuHn_gJ3jEekOOoDAnZtIjbgdwwcNx3UDO7acJfPW677b3GHlwtQOQO2Zmaim1jIvtxFQlwYmlN9h4akecME9MeZQuUBKHlf4msJYbGfPd6Brk5O3-VMqNNegkXT8"/>
+<div class="relative z-10">
+<h4 class="font-headline font-bold text-primary mb-1 italic">HOT BUYER MATCH</h4>
+<p class="text-sm mb-4 text-on-surface-variant">We've found 3 verified collectors looking for your specific skin inventory.</p>
+<button class="w-full bg-on-surface text-background font-headline font-bold py-3 rounded hover:bg-primary transition-colors">LIST ACCOUNT NOW</button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#060e20] w-full border-t border-[#40485d]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full gap-8 max-w-[1920px] mx-auto">
+<div class="text-lg font-bold text-[#dee5ff] font-headline">KINETIC VAULT</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-sm tracking-wide">
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Marketplace</a>
+<a class="text-[#00f4fe] font-bold" href="#">AI Valuation</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Support</a>
+</div>
+<div class="text-[#dee5ff]/50 text-xs font-['Inter']">
+                © 2024 KINETIC VAULT. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

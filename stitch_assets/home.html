@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC VAULT | High-Impact Game Account Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#0f1930",
+              "background": "#060e20",
+              "outline": "#6d758c",
+              "tertiary-dim": "#95e400",
+              "surface-container-highest": "#192540",
+              "on-secondary-fixed-variant": "#006266",
+              "error-container": "#a70138",
+              "primary-container": "#c683ff",
+              "surface-container-low": "#091328",
+              "on-tertiary-fixed": "#294300",
+              "outline-variant": "#40485d",
+              "on-tertiary-fixed-variant": "#3d6200",
+              "tertiary-fixed": "#a2f31f",
+              "inverse-primary": "#8d00e6",
+              "on-primary-fixed-variant": "#450074",
+              "on-error": "#490013",
+              "inverse-surface": "#faf8ff",
+              "tertiary-container": "#a2f31f",
+              "secondary-dim": "#00e5ee",
+              "primary-fixed": "#c683ff",
+              "surface-container-high": "#141f38",
+              "inverse-on-surface": "#4d556b",
+              "on-secondary-fixed": "#004346",
+              "on-background": "#dee5ff",
+              "surface-dim": "#060e20",
+              "secondary": "#00f4fe",
+              "surface": "#060e20",
+              "surface-bright": "#1f2b49",
+              "on-secondary-container": "#dffdff",
+              "on-primary-container": "#37005f",
+              "error": "#ff6e84",
+              "on-primary": "#480079",
+              "on-error-container": "#ffb2b9",
+              "surface-container-lowest": "#000000",
+              "secondary-container": "#00696e",
+              "on-surface-variant": "#a3aac4",
+              "surface-variant": "#192540",
+              "tertiary": "#bcff5f",
+              "tertiary-fixed-dim": "#95e400",
+              "secondary-fixed-dim": "#00e5ee",
+              "error-dim": "#d73357",
+              "on-secondary": "#00575b",
+              "on-tertiary-container": "#365700",
+              "on-tertiary": "#3d6100",
+              "on-surface": "#dee5ff",
+              "on-primary-fixed": "#000000",
+              "primary-dim": "#a533ff",
+              "secondary-fixed": "#00f4fe",
+              "surface-tint": "#cf96ff",
+              "primary": "#cf96ff",
+              "primary-fixed-dim": "#bc6fff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-morphism {
+        background: rgba(31, 43, 73, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .primary-gradient-bg {
+        background: linear-gradient(135deg, #cf96ff 0%, #a533ff 100%);
+      }
+      .hero-asymmetry {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_0_40px_rgba(207,150,255,0.08)]">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] uppercase font-headline">
+                KINETIC VAULT
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-headline font-bold tracking-tight text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Buy</a>
+<a class="font-headline font-bold tracking-tight text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Sell</a>
+<a class="font-headline font-bold tracking-tight text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Worth</a>
+<a class="font-headline font-bold tracking-tight text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Dashboard</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">account_balance_wallet</span>
+</div>
+<button class="primary-gradient-bg text-on-primary px-6 py-2.5 rounded-md font-headline font-bold tracking-tight active:scale-95 duration-100 transition-all">
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="" class="w-full h-full object-cover" data-alt="Cinematic wide shot of a futuristic neon city in rain at night with glowing purple and cyan holographic advertisements and high-tech structures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZMkGhZZuRpCR_foFqJe00I9HthFrxudxhu8k9NFcLJrFBk4Qz0BjBSSDAFuD-BJ-sgAzgwNgYlKberxyDXvQ5SY3v9A5a7uYJqzL-iucjnm_wL4u51-vInMPvyaF8fDBtV9A5ReQJgqyLbBbz7SooNq0ZspiIu6rUTI6KzHBEAM18oMrbpDvAb8FnT6pEfC7LaiWANlD-KJRKPeisFZbJzaotQb3J4RICa7ffJ8EhLNIylqhurME-hiiNFTa0KjKcGODlinBhrU0w"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+<div class="container mx-auto px-8 relative z-20 grid lg:grid-cols-2 gap-12 items-center">
+<div class="max-w-2xl">
+<span class="inline-block py-1 px-3 mb-6 rounded-full bg-tertiary-container/20 text-tertiary font-label text-xs font-bold tracking-widest uppercase border border-tertiary/20">
+                        AI-POWERED VALUATION ENGINE
+                    </span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface leading-[0.9] tracking-tighter mb-8">
+                        UNLOCK THE <span class="text-primary italic">TRUE WORTH</span> OF YOUR GAMING LEGACY
+                    </h1>
+<p class="text-on-surface-variant text-lg md:text-xl mb-10 max-w-lg leading-relaxed">
+                        The world's most advanced marketplace for elite gaming assets. Secure, AI-verified, and powered by real-time market data.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="primary-gradient-bg text-on-primary px-8 py-4 rounded-md font-headline font-bold text-lg active:scale-95 transition-all shadow-[0_0_30px_rgba(207,150,255,0.3)]">
+                            Check Account Worth
+                        </button>
+<button class="bg-transparent border-2 border-secondary text-secondary px-8 py-4 rounded-md font-headline font-bold text-lg hover:bg-secondary/10 active:scale-95 transition-all">
+                            Explore Marketplace
+                        </button>
+</div>
+<div class="mt-12 flex items-center gap-8 text-on-surface-variant/60">
+<div class="flex flex-col">
+<span class="text-2xl font-headline font-bold text-on-surface">1.2M+</span>
+<span class="text-xs uppercase tracking-widest">Active Accounts</span>
+</div>
+<div class="w-px h-10 bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-2xl font-headline font-bold text-on-surface">$45M</span>
+<span class="text-xs uppercase tracking-widest">Total Traded</span>
+</div>
+</div>
+</div>
+<!-- Floating Interactive Element (Asymmetric) -->
+<div class="hidden lg:block relative">
+<div class="glass-morphism p-8 rounded-xl border border-outline-variant/20 shadow-2xl transform rotate-3 scale-105">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface">VALORANT ACCT #882</h3>
+<p class="text-sm text-on-surface-variant">Rare Skin Collection • Immortal 3</p>
+</div>
+<span class="bg-tertiary text-on-tertiary px-3 py-1 rounded text-xs font-bold font-headline">VERIFIED</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">AI Market Valuation</span>
+<span class="text-secondary font-bold">$2,840.00</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[85%] shadow-[0_0_10px_#00f4fe]"></div>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-tertiary">+12.4% vs last week</span>
+<span class="text-on-surface-variant">High Demand</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/10 text-center">
+<span class="block text-[10px] uppercase text-on-surface-variant mb-1 tracking-tighter">Skins</span>
+<span class="font-headline font-bold text-lg">142</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/10 text-center">
+<span class="block text-[10px] uppercase text-on-surface-variant mb-1 tracking-tighter">Win Rate</span>
+<span class="font-headline font-bold text-lg text-tertiary">68%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Games Grid (Bento Style) -->
+<section class="py-24 bg-background">
+<div class="container mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-4">DOMINATE EVERY <span class="text-secondary">ARENA</span></h2>
+<p class="text-on-surface-variant text-lg max-w-xl">From tactical shooters to sprawling MOBAs, access the most exclusive collections in gaming history.</p>
+</div>
+<a class="text-primary font-headline font-bold flex items-center gap-2 hover:gap-4 transition-all group" href="#">
+                        VIEW ALL GAMES <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- Game 1: Valorant (Large) -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl border border-outline-variant/10">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Dynamic close-up of tactical shooter character neon energy glowing with purple accents and sharp aggressive visual style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYEJjs5VUuwO9JqXLhlNxMn9-HldQK8nIK8KNtX4KRLMWxdAEH0gEaYbeZMYUEwdbqyPAud5aXBOUM0CmXkij14JDzBe-cDjT8tO-T1R8fF5uYPZOHky5XLqpRem1g7KBGVrDXYhvDs3eBlWyQNF9C1xDkEGb97SpAmjIfkiOf7k3n687FKyJ5Pexk16GR7oV1UaEd4X52BECjIq2LhuZy6VqP6pc5jFPfvwN58vxN8pw5_oX_gJDs_wlrV5Qsc6WJQh0IfIt3DKHs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<h3 class="font-headline text-3xl font-bold mb-2">VALORANT</h3>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">14,204 Accounts</span>
+<span class="text-on-surface bg-primary/20 border border-primary/30 px-3 py-1 rounded font-bold">From $45</span>
+</div>
+</div>
+</div>
+<!-- Game 2: CS2 -->
+<div class="md:col-span-2 relative group overflow-hidden rounded-xl border border-outline-variant/10">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Extreme close up of a stylized tactical knife with intricate patterns reflecting neon city lights on a dark metallic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc_H0uS7V-HtZsGQ6BdhDu90Imty2TyT7DE13o3h78Fobf39iVcIfg1rKhAelXOiR3v5mXC77tRN8pfsDm9bmU0BqZUmISoU429qRli1vFDTNFQ1txNHXyccu7Y8Llh_NnhBqHqj3ftSlL10WPr2EdV_y761eotL-yE40sOE9VIA0npqZ6dO6LGsV1b8F2Sks-m1ATSpx4AwoDR04k6AnVB2tw1WYWCiSEWxhK6mPKVYNY09zWKKYyDL889-tsAGouOA3zRMgraYLL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="font-headline text-2xl font-bold mb-1">COUNTER-STRIKE 2</h3>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">8,110 Active Skins</span>
+<span class="text-on-surface font-bold text-secondary">Global Elite Status</span>
+</div>
+</div>
+</div>
+<!-- Game 3: LoL -->
+<div class="relative group overflow-hidden rounded-xl border border-outline-variant/10">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract mystical portal with swirling blue and gold magical energy fantasy game concept art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoo0QEUhsBWd0ywXs25k0oK9Chfo_FIMaLI5Y12z3N3v-iRP6-Nku75kEGIcneTiYjQVR82S1KKh_b43M3Z-GAexP-drmoU9u_E9CtASr1XVTV8DIvZH-hHhTR5lYrBo-HP_kCEo09NgTasptfQ-1vNYo3JhmuKcf6cmLO4DkPO7ynpUeciZr2ipdMzJnYMSbLMXj228ljIBCt-VhSG0jGiswdgbFJ-3JYBTpmgkrraqEW7DiReGo6LAjRHbycqq3sHVuJSPV_ZGis"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="font-headline text-xl font-bold">LEAGUE OF LEGENDS</h3>
+<p class="text-xs text-on-surface-variant mt-1">Starting at $29.99</p>
+</div>
+</div>
+<!-- Game 4: Apex -->
+<div class="relative group overflow-hidden rounded-xl border border-outline-variant/10">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Futuristic sci-fi pilot helmet glowing with orange HUD interface elements in a dark hangar environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdwH-xjp0k7wFFoRLIWkieXsRaazOSPKumV0DcF0uwd9c3b09qvoVePFLSw50j7e9hDHhZ1ptxxgF44kQvKc0aBknkEVza2bSLJFungpDmwLhCL5j5jcKe544rrhlUS7_kzxbfYHGGCryHr8Y6gXm7jEo2I4tu667blO2Vj_NfY2wHQKenzOb9w58kGp0aJLDoIPuE1EFuOrRUNLXHjQ-ufdYX6wPK_PsbaIICIKxUfTsJVdGrQ3uTNDF4ErBr0cxJEh8cHtfvF9qQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="font-headline text-xl font-bold">APEX LEGENDS</h3>
+<p class="text-xs text-on-surface-variant mt-1">Starting at $34.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Valuation Section -->
+<section class="py-24 bg-surface-container-low relative overflow-hidden">
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1 relative">
+<!-- AI HUD Component -->
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-1 overflow-hidden">
+<div class="bg-surface-container-high p-6 flex items-center justify-between border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary animate-pulse" style="font-variation-settings: 'FILL' 1;">neurology</span>
+<span class="font-headline font-bold text-sm tracking-widest">KINETIC ENGINE V2.4</span>
+</div>
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+<div class="p-8 space-y-8">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 rounded-xl bg-surface-container-highest flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-4xl text-primary">analytics</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant uppercase mb-1">Analyzing Rarity Metrics</div>
+<div class="h-2 w-48 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[75%]"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-high rounded-xl border border-outline-variant/10">
+<div class="text-[10px] text-on-surface-variant uppercase mb-1">Liquidity Score</div>
+<div class="text-2xl font-headline font-bold text-tertiary">A+</div>
+</div>
+<div class="p-4 bg-surface-container-high rounded-xl border border-outline-variant/10">
+<div class="text-[10px] text-on-surface-variant uppercase mb-1">Scarcity Index</div>
+<div class="text-2xl font-headline font-bold text-on-surface">9.2</div>
+</div>
+</div>
+<div class="pt-4">
+<div class="text-center font-headline font-bold text-3xl text-secondary mb-2">$3,429.50</div>
+<div class="text-center text-xs text-on-surface-variant uppercase tracking-widest">Estimated Market Value</div>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<span class="text-secondary font-headline font-bold tracking-[0.2em] text-sm uppercase block mb-4">The Future of Appraisal</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-8 leading-tight">NEVER UNDERSELL YOUR <span class="text-primary">BLOOD, SWEAT, AND TEARS</span></h2>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                            Our proprietary AI Valuation Engine scans millions of global data points including recent sales, skin rarity, rank history, and seasonal demand to give you a precise market value in seconds.
+                        </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="mt-1 w-6 h-6 rounded bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Real-Time Data Streams</h4>
+<p class="text-sm text-on-surface-variant">Instant synchronization with global marketplace shifts and skin updates.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-6 h-6 rounded bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Verification Shield</h4>
+<p class="text-sm text-on-surface-variant">AI-driven fraud detection ensures every account asset is legitimate.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="mt-1 w-6 h-6 rounded bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Historical Trending</h4>
+<p class="text-sm text-on-surface-variant">Predictive modeling shows you the best time to sell or hold.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-background px-8">
+<div class="max-w-6xl mx-auto primary-gradient-bg p-1 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(207,150,255,0.2)]">
+<div class="bg-surface-container-lowest rounded-[1.4rem] p-12 md:p-20 text-center relative overflow-hidden">
+<!-- Subtle Glow -->
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<h2 class="font-headline text-4xl md:text-6xl font-bold mb-8 relative z-10">READY TO <span class="text-primary italic">LIQUIDATE</span> YOUR ASSETS?</h2>
+<p class="text-on-surface-variant text-xl max-w-2xl mx-auto mb-12 relative z-10">
+                        Join 200,000+ gamers trading securely on the world's most sophisticated account engine.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="primary-gradient-bg text-on-primary px-10 py-5 rounded-md font-headline font-bold text-xl active:scale-95 transition-all">
+                            Check Account Worth
+                        </button>
+<button class="bg-surface-container-highest text-on-surface border border-outline-variant/30 px-10 py-5 rounded-md font-headline font-bold text-xl hover:bg-surface-container-high transition-all">
+                            Browse Market
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#060e20] w-full border-t border-[#40485d]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full gap-8">
+<div class="flex flex-col gap-4">
+<div class="text-lg font-bold text-[#dee5ff] font-headline uppercase tracking-tighter">KINETIC VAULT</div>
+<div class="text-[#dee5ff]/50 font-['Inter'] text-sm tracking-wide">© 2024 KINETIC VAULT. ALL RIGHTS RESERVED.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#dee5ff]/50 font-['Inter'] text-sm tracking-wide hover:text-[#cf96ff] transition-colors" href="#">Marketplace</a>
+<a class="text-[#dee5ff]/50 font-['Inter'] text-sm tracking-wide hover:text-[#cf96ff] transition-colors" href="#">AI Valuation</a>
+<a class="text-[#dee5ff]/50 font-['Inter'] text-sm tracking-wide hover:text-[#cf96ff] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#dee5ff]/50 font-['Inter'] text-sm tracking-wide hover:text-[#cf96ff] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#dee5ff]/50 font-['Inter'] text-sm tracking-wide hover:text-[#cf96ff] transition-colors" href="#">Support</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-xl">share</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-xl">rss_feed</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

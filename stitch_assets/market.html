@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC VAULT | Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#0f1930",
+              "background": "#060e20",
+              "outline": "#6d758c",
+              "tertiary-dim": "#95e400",
+              "surface-container-highest": "#192540",
+              "on-secondary-fixed-variant": "#006266",
+              "error-container": "#a70138",
+              "primary-container": "#c683ff",
+              "surface-container-low": "#091328",
+              "on-tertiary-fixed": "#294300",
+              "outline-variant": "#40485d",
+              "on-tertiary-fixed-variant": "#3d6200",
+              "tertiary-fixed": "#a2f31f",
+              "inverse-primary": "#8d00e6",
+              "on-primary-fixed-variant": "#450074",
+              "on-error": "#490013",
+              "inverse-surface": "#faf8ff",
+              "tertiary-container": "#a2f31f",
+              "secondary-dim": "#00e5ee",
+              "primary-fixed": "#c683ff",
+              "surface-container-high": "#141f38",
+              "inverse-on-surface": "#4d556b",
+              "on-secondary-fixed": "#004346",
+              "on-background": "#dee5ff",
+              "surface-dim": "#060e20",
+              "secondary": "#00f4fe",
+              "surface": "#060e20",
+              "surface-bright": "#1f2b49",
+              "on-secondary-container": "#dffdff",
+              "on-primary-container": "#37005f",
+              "error": "#ff6e84",
+              "on-primary": "#480079",
+              "on-error-container": "#ffb2b9",
+              "surface-container-lowest": "#000000",
+              "secondary-container": "#00696e",
+              "on-surface-variant": "#a3aac4",
+              "surface-variant": "#192540",
+              "tertiary": "#bcff5f",
+              "tertiary-fixed-dim": "#95e400",
+              "secondary-fixed-dim": "#00e5ee",
+              "error-dim": "#d73357",
+              "on-secondary": "#00575b",
+              "on-tertiary-container": "#365700",
+              "on-tertiary": "#3d6100",
+              "on-surface": "#dee5ff",
+              "on-primary-fixed": "#000000",
+              "primary-dim": "#a533ff",
+              "secondary-fixed": "#00f4fe",
+              "surface-tint": "#cf96ff",
+              "primary": "#cf96ff",
+              "primary-fixed-dim": "#bc6fff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(31, 43, 73, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_0_40px_rgba(207,150,255,0.08)]">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] uppercase font-headline">KINETIC VAULT</div>
+<div class="hidden md:flex items-center space-x-8 font-headline font-bold tracking-tight">
+<a class="text-[#cf96ff] border-b-2 border-[#cf96ff] pb-1" href="#">Buy</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Sell</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Worth</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Dashboard</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-4 text-[#dee5ff]/70">
+<button class="hover:bg-[#141f38] p-2 rounded-full transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-[#141f38] p-2 rounded-full transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary px-6 py-2 rounded-md font-headline font-bold tracking-tight active:scale-95 duration-100 transition-all">
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-20 min-h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-surface-container-low hidden lg:block p-8 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6 font-label">Popular Categories</h3>
+<nav class="space-y-2">
+<a class="flex items-center space-x-3 p-3 rounded-xl bg-surface-container-high text-primary font-medium transition-all group" href="#">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">sports_esports</span>
+<span>All Games</span>
+</a>
+<a class="flex items-center space-x-3 p-3 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-secondary transition-colors">shield</span>
+<span>Valorant</span>
+</a>
+<a class="flex items-center space-x-3 p-3 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-secondary transition-colors">target</span>
+<span>CS2 Global Elite</span>
+</a>
+<a class="flex items-center space-x-3 p-3 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-secondary transition-colors">swords</span>
+<span>League of Legends</span>
+</a>
+<a class="flex items-center space-x-3 p-3 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-secondary transition-colors">rocket_launch</span>
+<span>Overwatch 2</span>
+</a>
+<a class="flex items-center space-x-3 p-3 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-secondary transition-colors">star</span>
+<span>Apex Legends</span>
+</a>
+</nav>
+<div class="mt-12 p-6 rounded-2xl bg-gradient-to-br from-surface-container-high to-surface-container-lowest border border-outline-variant/15">
+<div class="text-tertiary font-headline font-bold mb-2">Sell Your Vault</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Instantly value your account using our AI-driven engine and get paid in crypto.</p>
+<button class="mt-4 w-full py-2 bg-surface-container-highest border border-tertiary/30 text-tertiary text-xs font-bold rounded-lg hover:bg-tertiary hover:text-on-tertiary transition-all">
+                    Start AI Valuation
+                </button>
+</div>
+</aside>
+<!-- Content Canvas -->
+<section class="flex-1 p-8 lg:p-12 overflow-x-hidden">
+<!-- Marketplace Header & Search -->
+<div class="mb-12">
+<h1 class="text-4xl lg:text-5xl font-black font-headline tracking-tighter mb-8 text-on-surface">MARKETPLACE</h1>
+<div class="glass p-1 rounded-2xl flex flex-col md:flex-row items-center gap-2 border border-outline-variant/10">
+<div class="flex-1 flex items-center px-6 gap-3 min-w-0">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body py-4" placeholder="Search by game, skin, or rank..." type="text"/>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 hidden md:block"></div>
+<div class="grid grid-cols-2 md:flex items-center gap-2 p-1 w-full md:w-auto">
+<button class="flex items-center justify-between px-4 py-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors text-sm font-medium min-w-[140px]">
+<span>Game Title</span>
+<span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<button class="flex items-center justify-between px-4 py-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors text-sm font-medium min-w-[120px]">
+<span>Region</span>
+<span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<button class="flex items-center justify-between px-4 py-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors text-sm font-medium min-w-[120px]">
+<span>Rank</span>
+<span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<button class="bg-secondary text-on-secondary-fixed px-6 py-3 rounded-xl font-bold font-headline tracking-wide hover:brightness-110 active:scale-95 transition-all">
+                            Filter
+                        </button>
+</div>
+</div>
+</div>
+<!-- Account Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+<!-- Account Card 1 -->
+<div class="group bg-surface-container-low rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(207,150,255,0.08)] transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="cinematic close-up of a high-tech gaming character with neon purple highlights and dark armor in a futuristic arena" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrObXfRsb2hDu3jth6QEKmAwEcWTyCq9XBz5YQAbfi6KSBIq8IWRm3g-lVjlpMgVy2bwWNYe-Rzy2zX-nq4p12ifL3FXZYrZHxPNysHpM0KzpHWtQ5dNiyV0XAk0DVjIwbSlcBqPaXIwtfny5-MQSSLFkHQoOpqfuFB5u7qv_8eIXNFoZxSqhg3DedrnK_XpyhIlpKElU7rZ2PzsVu6O5XAM1Co0SG52caHqKYaraS4MLLDQppfXjyak0VediY1zgsPORtK7DVC6cx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 glass rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/10">Valorant</span>
+<span class="px-3 py-1 bg-tertiary-container/20 text-tertiary-fixed text-[10px] font-bold tracking-widest uppercase rounded-full backdrop-blur-md">NA East</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-headline font-bold text-on-surface">Immortal 3 Account</h4>
+<p class="text-xs text-on-surface-variant font-medium">92 Skins • All Agents Unlocked</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs uppercase tracking-tighter font-bold text-secondary">Rank</span>
+<span class="font-headline font-black text-lg text-on-surface">IMMORTAL</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Kuronami Vandal</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Radiant Entertainment</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">+12 More</span>
+</div>
+<div class="mt-auto pt-6 flex items-center justify-between border-t border-outline-variant/10">
+<div>
+<span class="block text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">Buy Now</span>
+<span class="text-2xl font-black font-headline text-on-surface">$450.00</span>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary p-3 rounded-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Account Card 2 -->
+<div class="group bg-surface-container-low rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(207,150,255,0.08)] transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="abstract digital landscape with sharp polygonal mountains and a glowing cyan sun set in a dark velvet sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSplUUds8vHC2f306UfnyT1_bVdkdKSG1LpkOUOia6hFgaGL4q_NNEjwyl8I712W1oBKTXHMOnw3CLOd-rEr5PANOrRTWdXU0nkVqgCc3WaY2A8rmozhbtGFJ3-GmmFcqrX_r1rhrxxpK2pKoXLjnSZWjgSN_153-LhSCvHHww6CFEFNXOAkFrtAB1sLK0Fiug69UQbSj4ls9mYnC1gd0Tx1kMXmiNjuhZSwBLjS6Umqp-wCU-9stkD_aLVFBz9tpVnG-ikrdh80sH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 glass rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/10">CS2</span>
+<span class="px-3 py-1 bg-tertiary-container/20 text-tertiary-fixed text-[10px] font-bold tracking-widest uppercase rounded-full backdrop-blur-md">EU West</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-headline font-bold text-on-surface">Global Elite Service</h4>
+<p class="text-xs text-on-surface-variant font-medium">Prime Status • Dragon Lore AWP</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs uppercase tracking-tighter font-bold text-secondary">Rank</span>
+<span class="font-headline font-black text-lg text-on-surface">GLOBAL</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Dragon Lore</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Karambit Doppler</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Factory New</span>
+</div>
+<div class="mt-auto pt-6 flex items-center justify-between border-t border-outline-variant/10">
+<div>
+<span class="block text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">Buy Now</span>
+<span class="text-2xl font-black font-headline text-on-surface">$2,800.00</span>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary p-3 rounded-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Account Card 3 -->
+<div class="group bg-surface-container-low rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(207,150,255,0.08)] transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="vibrant neon game controller glowing in a dark room with blurred bokeh lights and futuristic vibes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdyIxLBxUaENS6RgBExXbe9RUfDjjbyaq6A_Sfx7tNa-u_DlSMzEpN4nQynrC8Fnck2yYP0ngUG9rV9KMqlAUNhAVAzrI1f8fUjDoC_ls3Nv5LgcRt-0MRI_DGYtFEyzqtjkJxy_FCq8_4qPeoOePPpHsUMWCvdEQNGSowXLNG85Rk8WhnDvG-o8mTIN5QB0fLD366sgZ1_3kfRMgyfegkvvIPwS0PlfmMjfIVrJvXV1LTz-8qVOkQ2YP2e82-O-a2k3P17wn3gwRk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 glass rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/10">LoL</span>
+<span class="px-3 py-1 bg-tertiary-container/20 text-tertiary-fixed text-[10px] font-bold tracking-widest uppercase rounded-full backdrop-blur-md">KR</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-headline font-bold text-on-surface">Challenger Peak Account</h4>
+<p class="text-xs text-on-surface-variant font-medium">150+ Skins • All Champions</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs uppercase tracking-tighter font-bold text-secondary">Rank</span>
+<span class="font-headline font-black text-lg text-on-surface">MASTER</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Elementalist Lux</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Spirit Guard Udyr</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Rare Emotes</span>
+</div>
+<div class="mt-auto pt-6 flex items-center justify-between border-t border-outline-variant/10">
+<div>
+<span class="block text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">Buy Now</span>
+<span class="text-2xl font-black font-headline text-on-surface">$1,250.00</span>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary p-3 rounded-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Account Card 4 -->
+<div class="group bg-surface-container-low rounded-2xl overflow-hidden hover:shadow-[0_0_40px_rgba(207,150,255,0.08)] transition-all duration-300 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="dynamic shot of a high-speed racing car or sci-fi vehicle glowing with lime green lighting in a dark urban tunnel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBKFWETFRXYoP2AM7_XoG0i7XS8gwRS_AaiaAKb0d9Q8R9TgWSFj5nIEUE2B9fhMZxB9PwWmhwDqvm46zz6dl05khaHZqhdvSc7wj_KzxVZfZMbR6eNoyt-Sa7DJ5rvspbKZcg4Unz1sHbo9Vpnj_b4Xkz7lGqTcx24pfgnYpEMTSRxyf-WELwJE8vumj46Va99mPsxlG7J8Sl_HUsf5NkXyIt3vS-nGO1YwqoBRbnd7JP7MasSc9-0VCxqAFCTUIBAVZfU_73_EHj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 glass rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/10">Apex</span>
+<span class="px-3 py-1 bg-tertiary-container/20 text-tertiary-fixed text-[10px] font-bold tracking-widest uppercase rounded-full backdrop-blur-md">Global</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-headline font-bold text-on-surface">Predator Account</h4>
+<p class="text-xs text-on-surface-variant font-medium">3 Heirlooms • Wraith Main</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs uppercase tracking-tighter font-bold text-secondary">Rank</span>
+<span class="font-headline font-black text-lg text-on-surface">PREDATOR</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Kunai Heirloom</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">Butterfly Knife</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-highest rounded-lg text-on-surface-variant border border-outline-variant/20">S3 Trail</span>
+</div>
+<div class="mt-auto pt-6 flex items-center justify-between border-t border-outline-variant/10">
+<div>
+<span class="block text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">Buy Now</span>
+<span class="text-2xl font-black font-headline text-on-surface">$890.00</span>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary p-3 rounded-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Section -->
+<div class="mt-16 flex flex-col items-center">
+<button class="px-12 py-4 bg-surface-container-high text-on-surface font-headline font-bold rounded-2xl border border-outline-variant/10 hover:border-primary/50 transition-all active:scale-95">
+                    Load More Accounts
+                </button>
+<p class="mt-4 text-xs text-on-surface-variant font-medium">Showing 4 of 1,248 accounts</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#060e20] w-full border-t border-[#40485d]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full gap-8 max-w-[1920px] mx-auto">
+<div class="text-lg font-bold text-[#dee5ff] font-headline">KINETIC VAULT</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-sm tracking-wide">
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Marketplace</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">AI Valuation</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Support</a>
+</div>
+<div class="text-[#dee5ff]/50 font-['Inter'] text-sm tracking-wide uppercase">
+                © 2024 KINETIC VAULT. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

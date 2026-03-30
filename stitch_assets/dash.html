@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#0f1930",
+              "background": "#060e20",
+              "outline": "#6d758c",
+              "tertiary-dim": "#95e400",
+              "surface-container-highest": "#192540",
+              "on-secondary-fixed-variant": "#006266",
+              "error-container": "#a70138",
+              "primary-container": "#c683ff",
+              "surface-container-low": "#091328",
+              "on-tertiary-fixed": "#294300",
+              "outline-variant": "#40485d",
+              "on-tertiary-fixed-variant": "#3d6200",
+              "tertiary-fixed": "#a2f31f",
+              "inverse-primary": "#8d00e6",
+              "on-primary-fixed-variant": "#450074",
+              "on-error": "#490013",
+              "inverse-surface": "#faf8ff",
+              "tertiary-container": "#a2f31f",
+              "secondary-dim": "#00e5ee",
+              "primary-fixed": "#c683ff",
+              "surface-container-high": "#141f38",
+              "inverse-on-surface": "#4d556b",
+              "on-secondary-fixed": "#004346",
+              "on-background": "#dee5ff",
+              "surface-dim": "#060e20",
+              "secondary": "#00f4fe",
+              "surface": "#060e20",
+              "surface-bright": "#1f2b49",
+              "on-secondary-container": "#dffdff",
+              "on-primary-container": "#37005f",
+              "error": "#ff6e84",
+              "on-primary": "#480079",
+              "on-error-container": "#ffb2b9",
+              "surface-container-lowest": "#000000",
+              "secondary-container": "#00696e",
+              "on-surface-variant": "#a3aac4",
+              "surface-variant": "#192540",
+              "tertiary": "#bcff5f",
+              "tertiary-fixed-dim": "#95e400",
+              "secondary-fixed-dim": "#00e5ee",
+              "error-dim": "#d73357",
+              "on-secondary": "#00575b",
+              "on-tertiary-container": "#365700",
+              "on-tertiary": "#3d6100",
+              "on-surface": "#dee5ff",
+              "on-primary-fixed": "#000000",
+              "primary-dim": "#a533ff",
+              "secondary-fixed": "#00f4fe",
+              "surface-tint": "#cf96ff",
+              "primary": "#cf96ff",
+              "primary-fixed-dim": "#bc6fff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(31, 43, 73, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .text-glow-primary {
+            text-shadow: 0 0 15px rgba(207, 150, 255, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 min-h-screen">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-[#060e20]/60 backdrop-blur-xl shadow-[0_0_40px_rgba(207,150,255,0.08)]">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] uppercase font-headline">KINETIC VAULT</div>
+<nav class="hidden md:flex items-center gap-8 font-headline font-bold tracking-tight">
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Buy</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Sell</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors" href="#">Worth</a>
+<a class="text-[#cf96ff] border-b-2 border-[#cf96ff] pb-1" href="#">Dashboard</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#dee5ff]/70 hover:text-[#cf96ff] transition-all" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-[#dee5ff]/70 hover:text-[#cf96ff] transition-all" data-icon="account_balance_wallet">account_balance_wallet</button>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary px-6 py-2 rounded-md font-bold text-sm tracking-tight hover:scale-105 active:scale-95 transition-all">Connect Wallet</button>
+</div>
+</div>
+</header>
+<div class="flex pt-20 min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-surface-container-low hidden lg:flex flex-col p-6 gap-8 sticky top-20 h-[calc(100vh-80px)]">
+<div class="space-y-2">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold px-4 mb-4">Account Menu</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary font-bold transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span>My Listings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span>Purchases</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Valuations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto p-4 rounded-xl bg-surface-container-highest border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-secondary to-primary flex items-center justify-center font-bold text-on-primary">JD</div>
+<div>
+<p class="text-sm font-bold">Juggernaut_01</p>
+<p class="text-[10px] text-tertiary uppercase font-black">Elite Trader</p>
+</div>
+</div>
+<div class="w-full h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-secondary"></div>
+</div>
+<p class="text-[10px] mt-2 text-on-surface-variant">XP: 7,450 / 10,000</p>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-8 lg:p-12 overflow-x-hidden">
+<header class="mb-12">
+<h1 class="font-headline text-4xl font-bold tracking-tight text-glow-primary mb-2">DASHBOARD_COMMAND</h1>
+<p class="text-on-surface-variant">Welcome back, operative. Market volatility is currently <span class="text-tertiary font-bold">LOW</span>.</p>
+</header>
+<!-- Quick Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="p-6 rounded-xl bg-surface-container-low border-l-4 border-primary shadow-[0_20px_40px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-9xl" data-icon="account_balance">account_balance</span>
+</div>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">Total Account Value</p>
+<p class="text-3xl font-headline font-black text-on-surface">$14,820.50</p>
+<div class="flex items-center gap-2 mt-2 text-tertiary text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12.4% this month</span>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border-l-4 border-secondary shadow-[0_20px_40px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-9xl" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">Active Sales</p>
+<p class="text-3xl font-headline font-black text-on-surface">04</p>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant text-sm">
+<span>Totaling $2,450.00</span>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border-l-4 border-tertiary shadow-[0_20px_40px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-9xl" data-icon="monetization_on">monetization_on</span>
+</div>
+<p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">Credits</p>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-headline font-black text-on-surface">2,850</p>
+<span class="text-tertiary text-xs font-bold uppercase">KV</span>
+</div>
+<button class="mt-4 text-xs font-bold text-secondary uppercase tracking-wider hover:underline transition-all">Top Up Balance</button>
+</div>
+</section>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Quick List Section -->
+<section class="xl:col-span-2 space-y-8">
+<div class="bg-surface-container-high rounded-2xl overflow-hidden shadow-2xl">
+<div class="p-8 border-b border-outline-variant/10">
+<h2 class="font-headline text-xl font-bold flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="add_circle">add_circle</span>
+                                Rapid Listing Deployment
+                            </h2>
+</div>
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-2 tracking-widest">Game Title</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg text-on-surface focus:ring-2 focus:ring-secondary/50 h-12 px-4">
+<option>Apex Legends</option>
+<option>Valorant</option>
+<option>League of Legends</option>
+<option>World of Warcraft</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-2 tracking-widest">Account Type</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-lg text-xs font-bold hover:bg-secondary/10 hover:text-secondary transition-all">Starter</button>
+<button class="py-2 bg-secondary/20 border border-secondary/50 rounded-lg text-xs font-bold text-secondary">Elite</button>
+<button class="py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-lg text-xs font-bold hover:bg-secondary/10 hover:text-secondary transition-all">Founder</button>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-[10px] uppercase font-bold text-on-surface-variant mb-2 tracking-widest">Requested Payout ($)</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg text-on-surface focus:ring-2 focus:ring-secondary/50 h-12 px-4" placeholder="0.00" type="number"/>
+</div>
+<button class="w-full h-12 bg-gradient-to-r from-primary to-primary-dim rounded-lg font-black uppercase text-sm tracking-tighter shadow-[0_0_20px_rgba(207,150,255,0.3)] hover:scale-[1.02] transition-transform">
+                                    Initiate Listing
+                                </button>
+</div>
+</div>
+</div>
+<!-- Market Insights Asymmetric Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/5">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-sm uppercase tracking-widest">Hottest Assets</h3>
+<span class="material-symbols-outlined text-tertiary" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-blue-500/20 flex items-center justify-center font-bold text-blue-400">V</div>
+<div>
+<p class="text-xs font-bold">Valorant Radiant</p>
+<p class="text-[10px] text-on-surface-variant">Demand: Ultra High</p>
+</div>
+</div>
+<p class="text-xs font-bold text-tertiary">+18.2%</p>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-red-500/20 flex items-center justify-center font-bold text-red-400">A</div>
+<div>
+<p class="text-xs font-bold">Apex Heirloom</p>
+<p class="text-[10px] text-on-surface-variant">Demand: High</p>
+</div>
+</div>
+<p class="text-xs font-bold text-tertiary">+5.4%</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-surface-container-high to-background rounded-2xl p-6 relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 transition-transform duration-700 group-hover:scale-110" data-alt="abstract digital neon matrix with flowing lines and glowing data particles in violet and cyan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeE_vGSjxtKIET12lRVTyckUx1KIwa8CFGlO86LzFpCQIwbXZVFdap6CEzVspZY_Wl0faGkCLgu7b5jozoyHwTB3KY8uTRiRBOV4YHIVpFPUsRdpZT7DilizI3Ubz8H5W2sCKWnjCEVEdM8YfOI4MduBG7_IociqdByd0yo1Q5yaX1GNiAwIulW62OwiofFTqg4bw-bc9vb8u6mD_I91oicbMcTsFVORGNpvOhLi15V2ri9bmbcpiusE3Gyd9OOh9P2NCvvS0ZquHM"/>
+<div class="relative z-10">
+<h3 class="font-headline font-bold text-xl mb-2">AI Valuation Engine</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-6">Our neural network just processed 1.2M market data points. Get an instant appraisal.</p>
+<button class="px-6 py-2 border border-secondary text-secondary rounded-full text-xs font-black uppercase tracking-widest hover:bg-secondary hover:text-background transition-all">Scan Inventory</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Feed -->
+<section class="xl:col-span-1">
+<div class="bg-surface-container-low rounded-2xl h-full flex flex-col">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+<h2 class="font-bold text-sm uppercase tracking-widest">Neural Feed</h2>
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#bcff5f]"></span>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Feed Item -->
+<div class="flex gap-4">
+<div class="mt-1">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold"><span class="text-primary">SOLD:</span> CS2 Global Elite Acc</p>
+<p class="text-[10px] text-on-surface-variant mb-2">2 hours ago • Transaction Confirmed</p>
+<p class="text-xs text-on-surface font-black">+$840.00</p>
+</div>
+</div>
+<!-- Feed Item -->
+<div class="flex gap-4">
+<div class="mt-1">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold"><span class="text-secondary">NEW VALUATION:</span> WoW Classic Lvl 80</p>
+<p class="text-[10px] text-on-surface-variant mb-2">5 hours ago • Market Volatility detected</p>
+<div class="px-2 py-1 rounded bg-surface-container-highest text-[10px] font-bold text-tertiary inline-block">Appraised: $215.00</div>
+</div>
+</div>
+<!-- Feed Item -->
+<div class="flex gap-4">
+<div class="mt-1">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold"><span class="text-primary">PURCHASED:</span> League Smurf (Lvl 30)</p>
+<p class="text-[10px] text-on-surface-variant mb-2">Yesterday • Item delivered to vault</p>
+<p class="text-xs text-on-surface font-black">-$45.00</p>
+</div>
+</div>
+<!-- Feed Item -->
+<div class="flex gap-4">
+<div class="mt-1">
+<div class="w-8 h-8 rounded-full bg-outline-variant/20 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold">System Maintenance</p>
+<p class="text-[10px] text-on-surface-variant">24 hours ago • Nodes updated successfully</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<button class="w-full py-3 rounded-xl border border-outline-variant/10 text-[10px] font-black uppercase tracking-widest text-on-surface-variant hover:text-primary hover:border-primary/30 transition-all">View All Activity</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Footer Anchor -->
+<footer class="w-full border-t border-[#40485d]/15 bg-[#060e20] font-body text-sm tracking-wide">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full gap-8 max-w-[1920px] mx-auto">
+<div class="text-lg font-bold text-[#dee5ff]">KINETIC VAULT</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Marketplace</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">AI Valuation</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#dee5ff]/50 hover:text-[#cf96ff] transition-colors" href="#">Support</a>
+</div>
+<div class="text-[#dee5ff]/50 text-xs">
+                © 2024 KINETIC VAULT. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>
